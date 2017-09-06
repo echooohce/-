@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>If分支</title>
+	</head>
+	<body>
+		<script>
+			var a = 2;
+			//if单分支
+			/*if(条件){
+				If(单分支)条件满足时执行,否则不执行;
+			}*/
+			
+			if(a){
+				console.log("If(单分支)条件满足时执行");
+			}
+			
+			//if双分支
+			/*if(条件){
+				语句1:If(双分支)条件满足时执行;
+			}else{
+				语句2:If(双分支)条件不满足时执行;
+			}*/
+				
+			if(a<=2){
+				console.log("If(双分支)条件满足时执行");
+			}else{
+				console.log("If(双分支)条件不满足时执行");
+			}
+			
+			//if多分支
+			/*if(条件1){
+				语句1:If(多分支)条件1满足时执行;
+			}else if(条件2){
+				语句2:If(多分支)条件2满足时执行;
+			}else{
+				语句2:If(多分支)条件1和条件2都不满足时执行;
+			}*/
+			
+			if(a>2){
+				console.log("If(多分支)条件1满足时执行");
+			}else if(a<2){
+				console.log("If(多分支)条件2满足时执行");
+			}else{
+				console.log("If(多分支)条件不满足时执行");
+			}
+		</script>
+	</body>
+</html>
