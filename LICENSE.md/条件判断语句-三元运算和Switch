@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>三元(三目)运算符和Switch分支</title>
+	</head>
+
+	<body>
+		<script>
+			var a = 10;
+			var b = 20;
+			var c = 30;
+			var d = 40;
+			var min = 20;
+			//三元(三目)运算符
+			//条件?条件成立时执行:条件不成立时执行(注意符号)
+			var max = a > b ? a : b;
+			console.log(max);
+
+			//Switch分支
+			/*switch(表达式){
+				case value1:
+				表达式值恒等于value1时执行;
+				break;跳出switch语句(循环);
+				case value2:
+				表达式值恒等于value2时执行;
+				break;跳出switch语句(循环);
+				...
+				case valueN:
+				表达式值恒等于valueN时执行;
+				break;跳出switch语句(循环);
+				default:
+				case 条件都不成立时执行;
+			}*/
+			
+			switch(min){
+				case 10:
+				console.log("执行语句1");
+				break;
+				case 20:
+				console.log("执行语句2");
+				break;
+				case 30:
+				console.log("执行语句3");
+				break;
+				default:
+				console.log('条件都不成立时执行');
+			}
+		</script>
+	</body>
+
+</html>
