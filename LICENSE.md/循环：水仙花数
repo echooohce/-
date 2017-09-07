@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>找出所有的水仙花数，三位数，各位立方和等于该数本身</title>
+	</head>
+	<body>
+		<script>
+			for(var i =100;i<999;i++){
+				var h = parseInt(i/100);
+				var t = parseInt(i%100/10)
+				var g = parseInt(i%10);
+				if(Math.pow(h,3)+Math.pow(t,3)+Math.pow(g,3)==i){
+					console.log(i);
+				}
+			}
+		</script>
+	</body>
+</html>
