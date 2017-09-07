@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>编写生成4位数字验证码的函数</title>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			function check(){
+				var num = 1000+parseInt((Math.random()*8999));
+				console.log(num);
+				document.querySelector("div").innerHTML=num;
+			}
+			check();
+		</script>
+	</body>
+</html>
