@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>输出 3 + 33 + 333 + 3333的值</title>
+	</head>
+
+	<body>
+		<!--n = 3,相加三次,每次相加比前一次相加的数,多一位
+                    每次多的这个位数的值为a, 3, 310+3, 3310+3-->
+		<input placeholder="输入第一个数" />
+		<input placeholder="输入第二个数" />
+		<button onclick="cal()">计算</button>
+		<p></p>
+		<script>
+			function cal() {
+				var x = parseInt(document.querySelectorAll("input")[0].value);
+				var y = parseInt(document.querySelectorAll("input")[1].value);
+				var s = 1;
+				var count = 0;
+				if(x > y) {
+					for(var i = 0; i <= y; i++) {
+						s = s * 10 + y;
+						count = count + s;
+						document.querySelector("p").innerHTML = count;
+					}
+				} else {
+					for(var i = 0; i <= x; i++) {
+						s = s * 10 + x;
+						count = count + s;
+						document.querySelector("p").innerHTML = count;
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>
