@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>组合的奇数</title>
+	</head>
+
+	<body>
+		 <!--编写一个函数，计算任意两个数字之间所能组成的奇数个数，参数数字必须是个位数
+                      比如： 计算0-3之间能组成的奇数是01、21、03、13、23、31
+                      不能单个数字本身进行组合，如11,33-->
+		<script>
+			function cal(max, min) {
+				var m = '';//定义一个空字符串
+				for(var i = min; i <= max; i++) {//
+					for(var j = min; j <= max; j++) {
+						if(i == j) {//本身不能相同
+							continue;//如果相同，跳出本次循环
+						}
+						var n = '' + i + j;
+						if(n % 2 != 0) {
+							m += n + ",";
+						}
+					}
+				}
+				console.log(m);
+			}
+			cal(5, 0);
+		</script>
+	</body>
+
+</html>
