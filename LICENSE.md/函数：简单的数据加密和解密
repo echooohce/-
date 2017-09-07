@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>数据加密和解密</title>
+	</head>
+
+	<body>
+		<!--某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，
+		加密规则如下：每位数字都加上5,然后用除以10的余数代替该数字，再将第一
+		位和第四位交换，第二位和第三位交换，请编写一个函数，传入原文，输出密文-->
+		<script>
+			function jiaM(num) {
+				var q = parseInt(num / 1000); //千位
+				var b = parseInt(num % 1000 / 100); //百位
+				var s = parseInt(num % 100 / 10); //十位
+				var g = parseInt(num % 10); //个位
+				q = q + 5;
+				b = b + 5;
+				s = s + 5;
+				g = g + 5;
+				q = q % 10;
+				b = b % 10;
+				s = s % 10;
+				g = g % 10;
+				var arr = '' + g + s + b + q;
+				return arr;
+			}
+			console.log(jiaM(1024)); //=>9756;
+
+			function jieM(num) {
+				var q = parseInt(num / 1000); //千位
+				var b = parseInt(num % 1000 / 100); //百位
+				var s = parseInt(num % 100 / 10); //十位
+				var g = parseInt(num % 10); //个位
+				q = (q >= 5 ? q : q + 10) - 5;
+				b = (b >= 5 ? b : b + 10) - 5;
+				s = (s >= 5 ? s : s + 10) - 5;
+				g = (g >= 5 ? g : g + 10) - 5;
+				var arr2 = '' + g + s + b + q;
+				return arr2;
+			}
+			console.log(jieM(9756));
+		</script>
+	</body>
+</html>
