@@ -7,12 +7,20 @@
 	<body>
 		<div></div>
 		<script>
+			//编写生成4位数字验证码的函数
 			function check(){
 				var num = 1000+parseInt((Math.random()*8999));
 				console.log(num);
 				document.querySelector("div").innerHTML=num;
 			}
 			check();
+			
+			//封装获取某个范围内随机数的方法
+			function getRdNumber(max,min){
+				var random = parseInt(min+Math.random()*(max-min+1));
+				return random;
+			}
+		       console.log(getRdNumber(15,12));			
 		</script>
 	</body>
 </html>
