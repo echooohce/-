@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>递归实现斐波那契数列</title>
+	</head>
+	<body>
+		<!--兔子繁殖问题，设有一对新生兔子，从第四个月开始他们每个月, 月初都生一对兔子, 
+		新生的兔子从第四个月月初开始又每个月生一对兔子按此规律，并假定兔子没有死亡,
+		 n(n<=20)个月月末共有多少对兔子？-->
+		<script>
+			//月份不足四时。不生小兔子，返回1；第四个月开始，每月生一只。本月兔子数=上月数+上上上个月数
+			function cal(n){
+				if(n<=3){
+					return 1;
+				}else{
+					return cal(n-1)+cal(n-3)
+				}
+			}
+			console.log(cal(20));
+		</script>
+	</body>
+</html>
