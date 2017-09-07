@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>递归调用</title>
+	</head>
+	<body>
+		<script>
+			//递归自己调用自己
+			var a = 1;
+			var s = 0;
+			var func = function() {
+				s = s + a;
+				a++;				
+				if(a>100) {
+					return;
+				}
+				func();
+			}
+			func();
+		console.log(s);
+		</script>
+	</body>
+</html>
