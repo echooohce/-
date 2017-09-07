@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>打印99乘法表</title>
+	</head>
+	<body>
+		<p></p>
+		<script>
+			var s =1;			
+			for(var i = 1;i<=9;i++){				
+				for(var j = 1;j<=i;j++){
+					s = i*j;
+					document.querySelector("p").innerHTML+=i+"*"+j+"="+s+" "+"&nbsp";
+				}
+				document.querySelector("p").innerHTML+="</br>";
+			}
+		</script>
+	</body>
+</html>
