@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>while-do while-for循环</title>
+	</head>
+	<body>
+		<!--固定次数的循环，用for循环，不固定次数用while循环-->
+		<script>
+			var a = 6;
+			
+			//while
+			/*while(条件){
+				语句:条件成立一直执行,直到不成立结束循环;
+				条件更新(自加等)
+			}*/
+			while(a<8){
+				console.log("条件成立一直执行，直到不成立结束循环");
+				a++;
+			}
+			
+			//dowhile
+			/*do{
+				语句:不管条件是否成立，至少执行一次;
+				条件更新(自加等);
+			}while(条件);*/
+			do{
+				console.log("不管条件是否成立，至少执行一次");
+				a--;
+			}while(a>3)
+			
+			//for
+			/*for(变量初始值;条件判断;变量更新){
+				console.log("条件成立一直执行此处语句，直到条件不成立");
+			}*/
+			for(var i = 0;i<a;i++){
+				console.log("条件成立一直执行此处语句，直到条件不成立");
+			}
+		</script>
+	</body>
+</html>
