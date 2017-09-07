@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闭包</title>
+	</head>
+	<body>
+		<script>
+			//function closer闭包 函数里面嵌套函数
+			
+			//例1
+			var func1 = function (){
+				var a = 8;
+				function func2(){
+					console.log(a);
+				}
+				return func2;
+			}
+			func1();
+			console.log(func1())
+			var func3 = func1();
+			func3();
+			
+			//例2
+			function func4(name){
+				var text="hello"+name;
+				function func5(){
+					console.log(text);
+				}
+				return func5;
+			}
+			func4();
+			console.log(func4());
+			var func5 = func4("world");
+			func5();
+			
+			//例3
+			function func6(){
+				function func7(){
+					console.log(test);
+				}
+				var test = "hello world";
+				return func7;
+			}
+			func6()();
+			var func8 = func6();
+			func8();
+		</script>
+	</body>
+</html>
