@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>工厂函数-构造函数</title>
+	</head>
+	<body>
+		<script>
+			//工厂函数
+			function func(name,hobby,age){
+				var obj={};
+				obj.name=name;
+				obj.hobby=hobby;
+				obj.age=age;
+				return obj;
+			}
+			var func2=func("echo","eat",6);
+			console.log(func2);
+			
+			//构造函数
+			function func3(name,hobby,age){
+				this.name=name;
+				this.hobby=hobby;
+				this.age=age;
+			}
+			var func4 = new func3("ohce","drink",8);
+			console.log(func4)
+		</script>
+	</body>
+</html>
