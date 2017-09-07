@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数的定义</title>
+	</head>
+	<body>
+		<script>
+			var a = 2;
+			var b = 3;
+			//赋值式（函数表达式）
+			var func = function(){
+				console.log("赋值式")
+				console.log(a+b);
+			}
+			func();
+			
+			//声明式(函数独立封装操作)
+			function func2(){
+				console.log("声明式");
+				console.log(a-b);
+			}
+			func2();	
+			
+			//function构造式
+			var func3 = new Function();
+		</script>
+	</body>
+</html>
