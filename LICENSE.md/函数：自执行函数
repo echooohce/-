@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//自执行函数
+			(function (){
+				console.log("hello world");
+			})()
+			
+			//利用自执行函数定义一个字符串
+			var name = (function(){
+				return "abc";
+			})()
+			console.log(name)
+			
+			//利用自执行函数定义一个数值
+			var num = (function(){
+				return 88;
+			})()
+			console.log(num);
+			
+			//利用自执行函数定义一个数组
+			var arr = (function(){
+				return ['a','b','c']
+			})()
+			console.log(arr);
+			
+			//利用自执行函数定义一个对象
+			var obj = (function(){
+				return {
+					name:"laoyao",
+					hobby:"meizi",
+					age:88
+				}
+			})();
+			console.log(obj);
+		</script>
+	</body>
+</html>
