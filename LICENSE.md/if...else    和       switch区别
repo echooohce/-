@@ -1,0 +1,4 @@
+if...else    和       switch区别
+	1.if单条件/双条件/多条件         switch 多条件
+	2.if条件一般情况下是区间(范围)    switch  条件一般是具体值。(break：跳出switch语句，是switch核心)
+	3.if 利用==进行匹配的            switch 通过恒等进行值匹配的
