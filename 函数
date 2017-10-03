@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//函数：封装，重用，任意的调用的。冗余
+			//普通函数(声明式的函数)，函数表达式(自执行的函数，事件处理函数...)
+			
+			//1.普通函数的声明：function 关键字来声明，函数名(自定义)，后跟一组参数以及函数体
+			/*function sum(){ (括号)：放置参数。
+				语句块，函数体
+			}*/
+			
+			/*function sum(){ 
+				alert(2+3);
+			}*/
+			//2.函数的调用：函数名+括号,可以前置，放置在任意地方，包括声明的前面。函数不调用，当作不存在。
+			//sum();  函数调用
+			//window.sum();  方法。
+			//alert(a);//变量不可前置，因为作用域的影响。
+			//var a=5;
+			
+			
+			//3.对象下面的方法和函数区别。
+			//所有的函数都是window的方法.当一个函数自由自在的时候，是函数，当一个函数不自由了就是方法。
+			//所有的变量都是window的属性,当一个变量自由自在的时候，是变量，当一个变量不自由了就是属性。
+			//var num=100;
+			//alert(num);//num:变量
+			//alert(window.num);//num:属性。
+			
+			
+			//4.函数的相关特性
+			/*function str(){
+				alert('hello,function');
+			}*/
+			//str();
+			//alert(str);//输出函数名称。获取到整个函数定义时的代码。
+			
+			/*(function str(){//函数的定义和调用在一起
+				alert('hello,function');
+			})()*/
+			/*(function (){//函数的定义和调用在一起   函数名省略，叫做匿名函数。
+				alert('hello,function');
+			})()*/
+			
+			/*function str(){//报错，函数不是一个表达式，函数的声明。
+				alert('hello,function');
+			}();//？？？函数的声明转换成表达式，利用()转换，+ - ~ ！*/
+			
+			/*(function(){//转换表达式   利用()转换，+ - ~ ！
+				alert('123');
+			})();*/
+			
+			//fn(); 
+			/*var fn=function(){
+				alert('fn');
+			};
+			fn();*/
+			
+			/*var a=6;
+			if(a>5)alert('ok');//一行语句可以省略{}*/
+			
+			
+			//变化：普通的函数声明--->函数表达式(匿名函数)
+			
+			/*document.onclick=function(){
+				
+			}*/
+			
+			/*function fn(){
+				alert('123');
+			}*/
+			/*document.onclick=fn;//事件处理函数：将一个函数给事件，通过函数名调用。
+			document.ondblclick=fn;*/
+			
+			function sum(){//函数都有一个返回值return。返回值代表着函数的结果。如果没有显示定义返回值。默认返回undefined
+				return 4+5;//return : 函数的返回值，函数结束了。
+				alert('hehe');
+			}
+			alert(sum());//undefined
+		</script>
+	</body>
+</html>
