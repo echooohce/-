@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//值传递：基本类型都是值传递。
+	/*	var a=5;
+		var b=a;
+		b++;
+		alert(a);//5
+		alert(b);//5*/
+		
+		//引用传递：对象之间的赋值
+		/*var a=[1,2,3];
+		var b=a;//引用传递：地址
+		var c=a[0];//值传递
+		b.push(4);
+		c++;
+		alert('a='+a);//a变化了
+		alert('b='+b);//改变b数组，a数组也改变了。
+		alert('c='+c);*/
+		//引用传递：利用for...in...一一赋值
+		var a=[1,2,3];
+		var b=[];
+		for(var i in a){//浅拷贝
+			b[i]=a[i];
+		}
+		b.push(4);
+		alert('a='+a);
+		alert('b='+b);
+		</script>
+	</body>
+</html>
