@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建对象：利用Object构造函数来完成，同样也有两种创建方法(构造函数和字面量)
+			/*var person=new Object();//创建一个空对象。对象的组成：属性和方法
+			person.name='zhangsan';//添加属性。
+			person.age=1000;
+			person.sex='女';
+			person.showinfo=function(){//添加方法。
+				return '他的名字是:'+person.name+',他今年有'+person.age+'岁，他是'+person.sex+'的'
+			};*/
+			
+			//alert(person.xingbie);//输出属性
+			//document.write(person.showinfo());
+			
+			//创建对象：字面量
+			/*var person={
+				name:'赵四',
+				age:35,
+				sex:'男',
+				showinfo:function(){
+					return '尼古拉斯'+person.name+',他今年有'+person.age+'岁，他是'+person.sex+'的'
+				}
+			};
+			
+			alert(person.sex);//输出属性
+			document.write(person.showinfo());*/
+			
+			var person={
+				'name':'赵四',
+				'age':35,
+				'sex':'男'
+			};
+			/*alert(person.name);
+			alert(person['name']);*/
+			//for...in用来遍历对象的最好方式。
+			
+			for(var i in person){//i:属性或者下标。
+				//alert(i);//name,age,sex
+				//alert(person.i);//点操作符后面跟的是字符串。属性没有找到显示undefined
+				alert(person[i]);//中括号里面即可以放置变量也可以放字符串而且和点操作符可以相互转换(字符串)
+			}
+			
+			
+			/*总结：
+			 约定：所有的点操作可以改写成中括号的形式：obj.name <===> obj[name]，反之考虑字符串和变量，变量不跟跟在点操作符后面。
+			obj.name  用点操作符，后面只能跟字符串
+			obj[name]  此时的name可以是变量和字符串。
+			*/
+		</script>
+	</body>
+</html>
