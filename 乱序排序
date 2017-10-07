@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var arr=[0,1,2,3,4,5,6,7,8,9];
+			//arr.sort(function(){//这不是最好的方式。
+				//return Math.random() > 0.5 ? 1 : -1;
+				//return Math.random()>0.5;
+			//});
+			//document.write(arr);
+			var arr=[0,1,2,3,4,5,6,7,8,9];
+			for(var i=arr.length-1;i>=0;i--){
+				var j=parseInt(Math.random()*(i+1));//随机下标。
+				var temp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+			document.write(arr);
+			
+			/*Math.round()/Math.pow()/Math.random()
+			Math.floor():向下取整   2.999===>2
+			Math.ceil():向上取整     2.001===>3*/
+		</script>
+	</body>
+</html>
