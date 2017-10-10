@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var arr=[1,2,3,4,5,6,7,8,9];
+			//如果该函数对每一项都返回 true ，则返回 true 
+			/*var bool=arr.every(function(v,i,array){
+				//alert(this);//第二个参数修改this指向。
+				return v>0;
+			},'hello');*/
+			
+			//如果该函数对任意一项返回 true ，则返回 true
+			/*var bool=arr.some(function(v,i,array){
+				//alert(this);//第二个参数修改this指向。
+				return v>8;
+			},'hello');*/
+			
+			//返回该函数结果为 true 的项组成的数组
+			/*var arr=[1,2,3,4,5,6,7,8,9];
+			var newarr=arr.filter(function(v,i,array){
+				return v>4;
+			},'hello');
+			alert(newarr);*/
+			
+			//返回每次函数调用的结果组成的数组。返回就是数组，不考虑true或者false
+			var arr=[1,2,3,4,5,6,7,8,9];
+			/*var newarr=arr.map(function(v,i,array){
+				return v>5;
+			})
+			alert(newarr);*/
+			
+			
+			//forEach() ：对数组中的每一项运行给定函数。这个方法没有返回值。  for循环
+			/*arr.forEach(function(v,i,array){
+				console.log(v);
+			});
+			
+			for(var i=0;i<arr.length;i++){
+				console.log(arr[i]);
+			}*/
+			//编写函数has(arr , 60) 判断数组中是否存在60这个元素，返回布尔类型
+			/*var arr=[1,2,3,4,5,6,7,8,9];
+			function has(arr,value){
+				for(var i=0;i<arr.length;i++){
+					if(arr[i]==value){
+						return true;
+					}
+				}
+				return false;
+			}
+			alert(has(arr,8))*/
+			
+			//var arr=[1,2,3,4,5,6,7,8,9];
+			//function has(arr,value){
+				/*if(arr.indexOf(value)!=-1){
+					return true;
+				}*/
+				
+				/*return arr.some(function(v,i,array){//has函数的返回值
+					return v==value//布尔值
+				});*/
+				
+			//}
+			//alert(has(arr,8))
+		</script>
+	</body>
+</html>
