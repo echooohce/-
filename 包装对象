@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//一切皆对象
+			/*var num=5;
+			var num1=new Number(5);
+			
+			alert(num);//5
+			alert(num1);//5
+			alert(typeof num);//number
+			alert(typeof num1)//object*/
+			//var num=5.1234;
+			//var num=new Number(5.1234);//隐式
+			//alert(num.toFixed(2));
+			
+			//var str='hello';//字符串值
+			//var str1=new String('hi');//字符串对象。
+			
+			//使用字符串、数字或布尔值的属性和方法时，创建的临时对象称做包装对象，它只是偶尔用来区分字符串值和字符串对象、数字和数值对象以及布尔值和布尔对象。
+			//  包装对象和数组对象区别
+			/*var arr=new Array(1,2,3);
+			arr.hehe=5;
+			//alert(arr.hehe);
+			arr.length=10;
+			alert(arr.length);
+			*/
+			
+			
+			//var str=new String('hello');
+			var str='hello';
+			/*str.haha=10;//创建临时包装对象。
+			alert(str.haha);//undefined   包装对象已经销毁*/
+			
+			/*str.length=10;
+			alert(str.length);*/
+		</script>
+	</body>
+</html>
