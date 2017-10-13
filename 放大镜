@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				padding: 100px;
+			}
+			
+			.clear {
+				content: "";
+				clear: both;
+				display: block;
+			}
+			
+			.smallP {
+				float: left;
+				width: 180px;
+				height: 180px;
+				position: relative;
+			}
+			
+			.smallF {
+				position: absolute;
+				background: rgba(255, 0, 0, 0.3);
+				visibility: hidden;
+				left: 0px;
+				top: 0px;
+			}
+			
+			.smallP img {
+				width: 180px;
+				height: 180px;
+			}
+			
+			.bigP {
+				float: left;
+				width: 300px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+				visibility: hidden;
+			}
+			
+			#img {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				width: 640px;
+				height: 640px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="out" class="clear">
+			<div class="smallP">
+				<img src="img/g3.jpg" />
+				<div class="smallF"></div>
+			</div>
+			<div class="bigP">
+				<img src="img/g3.jpg" id="img" />
+			</div>
+		</div>
+		<script src="public.js"></script>
+		<script>
+			function Magnifying() {
+				var that = this;
+				this.out = document.getElementById('out');
+				this.smallpicture = document.querySelector('.smallP');
+				this.smallmagnifying = document.querySelector('.smallF');
+				this.bigpicture = document.querySelector('.bigP');
+				this.img = document.getElementById('img');
+				this.init = function() {
+					this.smallpicture.onmouseover = function() {
+						that.smallmagnifying.style.visibility = 'visible';
+						that.bigpicture.style.visibility = 'visible';
+						that.smallmagnifying.style.width = that.smallpicture.offsetWidth * that.bigpicture.offsetWidth / that.img.offsetWidth + 'px';
+						that.smallmagnifying.style.height = that.smallpicture.offsetHeight * that.bigpicture.offsetHeight / that.img.offsetHeight + 'px';
+						that.scale = that.img.offsetWidth / that.smallpicture.offsetWidth;
+						that.smallpicture.onmousemove = function(e) {
+							var e = e || window.event;
+							var x = e.clientX - that.out.offsetLeft - that.smallmagnifying.offsetWidth / 2;
+							var y = e.clientY - that.out.offsetTop - that.smallmagnifying.offsetHeight / 2;
+							if(x >= that.smallpicture.offsetWidth - that.smallmagnifying.offsetWidth) {
+								x = that.smallpicture.offsetWidth - that.smallmagnifying.offsetWidth
+							} else if(x <= 0) {
+								x = 0;
+							}
+							if(y>=that.smallpicture.offsetHeight-that.smallmagnifying.offsetHeight){
+								y=that.smallpicture.offsetHeight-that.smallmagnifying.offsetHeight
+							}else if(y<=0){
+								y=0;
+							}
+							that.smallmagnifying.style.left=x+'px';
+							that.smallmagnifying.style.top=y+'px';
+							that.img.style.left=-that.scale*x+'px';
+							that.img.style.top=-that.scale*y+'px';
+						}
+						
+						
+						/*that.smallpicture.onmousemove = function(e) {
+							var e = e || window.event;
+							this.x = e.clientX - that.out.offsetLeft - that.smallmagnifying.offsetWidth / 2;
+							this.y = e.clientY - that.out.offsetTop - that.smallmagnifying.offsetHeight / 2;
+							if(this.x >= that.smallpicture.offsetWidth - that.smallmagnifying.offsetWidth) {
+								this.x = that.smallpicture.offsetWidth - that.smallmagnifying.offsetWidth
+							} else if(this.x <= 0) {
+								this.x = 0;
+							}
+							if(this.y>=that.smallpicture.offsetHeight-that.smallmagnifying.offsetHeight){
+								this.y=that.smallpicture.offsetHeight-that.smallmagnifying.offsetHeight
+							}else if(this.y<=0){
+								this.y=0;
+							}
+							that.smallmagnifying.style.left=this.x+'px';
+							that.smallmagnifying.style.top=this.y+'px';
+							that.img.style.left=-that.scale*this.x+'px';
+							that.img.style.top=-that.scale*this.y+'px';
+						}*/
+					}
+
+					this.smallpicture.onmouseout = function() {
+						that.smallmagnifying.style.visibility = 'hidden';
+						that.bigpicture.style.visibility = 'hidden';
+					}
+				}
+			}
+			new Magnifying().init();
+		</script>
+	</body>
+</html>
