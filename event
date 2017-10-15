@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//事件处理函数：普通函数，给事件用的。
+			/*function fn(a,b){
+				console.log(a);
+			}*/
+			
+//			fn(5);
+			//document.onclick=fn;//给事件用的,事件处理函数   [object MouseEvent]
+			//事件对象：事件处理函数第一个参数。
+			
+			/*document.onclick=function(a){
+				console.log(a);//第一个参数就是事件对象
+			};*/
+			
+			/*document.onclick=function(){
+				console.log(arguments[0]);//可以通过arguments[0]来获取
+			};*/
+			
+			//事件对象.clientX
+			//1.获取事件对象(兼容问题)   
+			//ie下面提供了事件：window.event==>event;
+			/*document.onclick=function(){
+				alert(event.clientX)
+			}*/
+			//标准浏览器：事件处理函数的第一个参数就是事件对象
+			/*document.onclick=function(ev){//ev:事件对象。
+				alert(ev.clientX);
+			}*/
+			document.onclick=function(ev){
+				/*if(window.event){
+					alert(event.clientX);//ie
+				}else{
+					alert(ev.clientX);//标准
+				}*/
+				var ev=ev || window.event;//获取事件对象兼容的写法。
+				
+				alert(ev.clientX);
+				
+				//考虑兼容：if...else   或运算符      三目运算符    try...catch
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
