@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			/*var arr=[function(){alert(1)},function(){alert(2)},function(){alert(3)}];
+			arr[0]();*/
+			function fn1(){
+				alert(1);
+			}
+			function fn2(){
+				alert(2);
+			}
+			function fn3(){
+				alert(this);
+			}
+			function fn4(){
+				alert(4);
+			}
+			//document.onclick=fn1;
+			//document['onclick']=fn1;
+			function addEvent(obj,event,fn){//事件绑定
+				if(obj.attachEvent){//ie8以下的浏览器
+					var e='_'+event;
+					if(!obj[e]){//第一次传递事件类型，创建属性，并且将一个空数组赋值给对象的属性。
+						obj[e]=[];
+					}
+					obj[e].push(fn);//将绑定的函数追加到数组中。
+					
+					/*obj['_click']=[];第一次
+					obj['_mouseover']=[];*/
+					
+					obj['on'+event]=function(){//给对应的元素对象添加事件
+						for(var i in obj[e]){
+							obj[e][i].call(obj);//遍历数组里面的每个函数，输出结果
+						}
+					}
+				}else{
+					obj.addEventListener(event,fn,false);//标准浏览器
+				}
+			}
+			function removeEvent(obj,event,fn){
+				if(obj.detachEvent){
+					if(obj['_'+event]){//obj['_'+event]==数组
+						for(var i in obj['_'+event]){//遍历对象属性，
+							if(obj['_'+event][i]==fn){//比较
+								obj['_'+event].splice(i,1);//满足条件删除对应数组里面的函数对象。。
+								break;//跳出整个循环
+							}
+						}
+					}
+				}else{
+					obj.removeEventListener(event,fn,false);//标准浏览器
+				}
+				
+			}
+			window.onload=function(){
+				var oDiv=document.getElementsByTagName('div')[0];
+				addEvent(oDiv,'click',fn1);
+				addEvent(oDiv,'click',fn2);
+				removeEvent(oDiv,'click',fn2);
+				addEvent(oDiv,'click',fn3);
+				addEvent(oDiv,'click',fn4);
+			}
+		</script>
+	</head>
+	<body>
+		<div>1111111111111111</div>
+	</body>
+</html>
