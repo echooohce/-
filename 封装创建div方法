@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script>
+			window.onclick=function(){
+				function creatediv(n){
+					for(var i=0;i<n;i++){
+						var obox=document.createElement('div');
+						obox.style.height=50+'px';
+						obox.style.background='#99f';
+						obox.style.margin=5+'px';
+						document.body.appendChild(obox);
+					}
+				}
+				creatediv(5);
+			}
+			$(function(){
+				function creatediv(n){
+					for(var i=0;i<n;i++){
+						var obox=$("<div></div>");
+						obox.css({
+							'height':'50px',
+							'background':'#f99',
+							'margin':'5px'
+						})
+						$('body').append(obox);
+					}
+				}
+				creatediv(5);
+			})
+		</script>
+	</body>
+</html>
