@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var sec=0;
+		var min=0;
+		var hour=0;
+		setInterval(function(){
+			sec++;
+			if(sec>=60){
+				min++;
+				sec=0;
+			}
+			if(min>=60){
+				hour++;
+				min=0;
+			}
+			document.body.innerHTML='你的脚步停留时间：'+min+'分'+sec+'秒';
+		},1000)
+		document.body.innerHTML='你的脚步停留时间：'+min+'分'+sec+'秒';	
+		</script>
+	</body>
+</html>
